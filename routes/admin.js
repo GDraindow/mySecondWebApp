@@ -1,24 +1,24 @@
-const path = require('path')
-const express = require('express');
-const router = express.Router();
-const adminController = require('../controllers/admin')
+const path = require('path');
 
-// GET request
+const express = require('express');
+
+const adminController = require('../controllers/admin');
+
+const router = express.Router();
+
+// /admin/add-product => GET
 router.get('/add-product', adminController.getAddProduct);
 
-// 권한있는 product page 호출
+// /admin/products => GET
 router.get('/products', adminController.getProducts);
 
-// Post request
+// /admin/add-product => POST
 router.post('/add-product', adminController.postAddProduct);
 
-//edit page route
 router.get('/edit-product/:productId', adminController.getEditProduct);
 
-//post edit request 
 router.post('/edit-product', adminController.postEditProduct);
 
-//delete request
 router.post('/delete-product', adminController.postDeleteProduct);
 
 module.exports = router;

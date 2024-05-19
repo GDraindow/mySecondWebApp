@@ -15,30 +15,21 @@ main {
   margin: auto;
 }
 
-.centered {
-    text-align: center;
-}
-
-.image {
-  max-height: 20rem;
-  overflow: hidden; /* 컨테이너를 벗어나는 이미지 부분을 숨깁니다. */
-  display: flex;    /* 이미지를 가운데 정렬하기 위해 flexbox를 사용합니다. */
-  justify-content: center; /* 가로 중앙 정렬 */
-  align-items: center;      /* 세로 중앙 정렬 */
-}
-
-.image img {
-  height: 100%;      /* 이미지 높이를 최대 높이로 설정합니다. */
-  width: auto;       /* 이미지의 원래 비율을 유지하면서 너비를 자동 조절합니다. */
-  min-width: 100%;   /* 최소 너비를 컨테이너 너비의 100%로 설정하여 가로로 꽉 차게 합니다. */
-  object-fit: cover; /* 이미지가 컨테이너보다 클 경우, 비율을 유지하면서 컨테이너에 맞춰 자릅니다. */
-}
-
-
 form {
   display: inline;
 }
 
+.centered {
+  text-align: center;
+}
+
+.image {
+  height: 20rem;
+}
+
+.image img {
+  height: 100%;
+}
 
 .main-header {
   width: 100%;
@@ -51,8 +42,10 @@ form {
 
 .main-header__nav {
   height: 100%;
-  display: none;
+  width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .main-header__item-list {
@@ -67,14 +60,21 @@ form {
   padding: 0;
 }
 
-.main-header__item a {
+.main-header__item a,
+.main-header__item button {
+  font: inherit;
+  background: transparent;
+  border: none;
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 .main-header__item a:hover,
 .main-header__item a:active,
-.main-header__item a.active {
+.main-header__item a.active,
+.main-header__item button:hover,
+.main-header__item button:active {
   color: #ffeb3b;
 }
 
@@ -214,6 +214,17 @@ form {
   color: white;
 }
 
+.btn.danger {
+  color: red;
+  border-color: red;
+}
+
+.btn.danger:hover,
+.btn.danger:active {
+  background: red;
+  color: white;
+}
+
 @media (min-width: 768px) {
   .main-header__nav {
     display: flex;
@@ -223,4 +234,3 @@ form {
     display: none;
   }
 }
-
