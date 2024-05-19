@@ -19,9 +19,26 @@ main {
     text-align: center;
 }
 
+.image {
+  max-height: 20rem;
+  overflow: hidden; /* 컨테이너를 벗어나는 이미지 부분을 숨깁니다. */
+  display: flex;    /* 이미지를 가운데 정렬하기 위해 flexbox를 사용합니다. */
+  justify-content: center; /* 가로 중앙 정렬 */
+  align-items: center;      /* 세로 중앙 정렬 */
+}
+
+.image img {
+  height: 100%;      /* 이미지 높이를 최대 높이로 설정합니다. */
+  width: auto;       /* 이미지의 원래 비율을 유지하면서 너비를 자동 조절합니다. */
+  min-width: 100%;   /* 최소 너비를 컨테이너 너비의 100%로 설정하여 가로로 꽉 차게 합니다. */
+  object-fit: cover; /* 이미지가 컨테이너보다 클 경우, 비율을 유지하면서 컨테이너에 맞춰 자릅니다. */
+}
+
+
 form {
   display: inline;
 }
+
 
 .main-header {
   width: 100%;
@@ -206,3 +223,4 @@ form {
     display: none;
   }
 }
+
